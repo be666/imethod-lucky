@@ -1,0 +1,9 @@
+# Ignore node modules
+node_modules
+
+# Ignore built files
+dist
+dist-web
+
+npm-debug.log
+.idea
