@@ -1,0 +1,30 @@
+{
+  "apps": [
+    {
+      "name": "imethod-lucky",
+      "script": "server/server.js",
+      "watch": false,
+      "ignore_watch": [
+        ".idea",
+        ".git",
+        "node_modules",
+        "server/resource",
+        "client"
+      ],
+      "next_gen_js": true,
+      "env_bcaring": {
+        "NODE_ENV": "bcaring"
+      }
+    }
+  ],
+  "deploy": {
+    "bcaring": {
+      "user": "root",
+      "host": "bcaring.cn",
+      "ref": "origin/master",
+      "repo": "git@github.com:iMethod/imethod-lucky.git",
+      "path": "/var/www/imethod-lucky",
+      "post-deploy": "npm install;pm2 startOrRestart ecosystem.json --env bcaring"
+    }
+  }
+}
